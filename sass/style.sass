@@ -1,0 +1,37 @@
+=size($w,$h:$w)
+  width: $w
+  height: $h
+  
+html,body
+  +size(100%)
+  background-color: #222
+  display: flex
+  justify-content: center
+  align-items: center
+  
+.middle
+  position: relative 
+  transform: translateX(95px)
+.ball
+  +size(0px)
+  background-color: #fff
+  position: absolute
+  animation: ballani 3s infinite 
+  
+@keyframes ballani
+  0%
+    transform: translateX(0px)
+  50%
+    +size(60px)
+  100%
+    transform: translateX(200px)
+    background-color: #5930ff
+    +size(0px)
+@for $i from 1 through 30
+  .container#{$i}
+    transform: rotate(#{$i*360/30}deg)
+  
+.gate
+  display: flex
+  color: white
+  text-align:center
